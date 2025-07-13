@@ -1,80 +1,81 @@
-# STM32F446RE Bare-Metal Drivers 🚀
+# STM32F446 Bare‑Metal Drivers 🚀
 
-This repository contains a collection of bare-metal (register-level) embedded C projects for the **STM32F446RE** microcontroller, developed without using STM32 HAL or CMSIS-Driver libraries. It is focused on learning, testing, and demonstrating the use of on-chip peripherals directly via register programming.
+A collection of **bare-metal (register-level) C examples** for the **STM32F446RE** microcontroller — no HAL or high-level libraries used. Learn by working directly with registers, exploring key peripherals, and building embedded systems skills.
 
 ---
 
-## 📁 Folder Structure & Contents
+## 📁 Project Structure
 
 | Folder                        | Description                                      |
 |------------------------------|--------------------------------------------------|
-| `01_gpio`                    | Basic GPIO output (LED blinking)                |
-| `02_GPIO_INPUT`              | Reading digital input from a push button        |
+| `01_gpio`                    | Basic GPIO output – LED blinking                |
+| `02_GPIO_INPUT`              | Reading digital input from a push-button        |
 | `03_UART_TX_RX`             | UART transmit and receive example               |
-| `04_UART_TX_RX_Interrupt`   | UART communication using interrupt handling     |
-| `05_ADC_Contineous_Conversion` | Continuous analog data acquisition with ADC   |
-| `06_I2C_Master`              | I2C Master communication with start/stop        |
-| `07_I2C_Slave`               | I2C Slave mode implementation                   |
+| `04_UART_TX_RX_Interrupt`   | UART using interrupt-driven communication       |
+| `05_ADC_Continuous_Conversion` | Continuous ADC sampling                     |
+| `06_I2C_Master`              | I2C Master communication                        |
+| `07_I2C_Slave`               | I2C Slave configuration                         |
 | `08_SPI`                     | SPI Master communication                        |
-| `09_ADC1_ADC2_ADC3`         | Reading from ADC1, ADC2, ADC3 simultaneously    |
-| `10_Timer_gen`              | Basic timer configuration for delay generation  |
+| `09_ADC1_ADC2_ADC3`         | Simultaneous ADC data from ADC1/2/3             |
+| `10_Timer_gen`              | Basic timer – delay generation                  |
 | `11_Timer_interrupt_1s`     | Timer interrupt every 1 second                  |
-| `12_ADC_Interrupt`          | ADC data acquisition using interrupt            |
-| `13_PWM`                    | Generating PWM signals on multiple channels     |
-| `14_Empty`                  | Reserved for new experiments                    |
+| `12_ADC_Interrupt`          | ADC sampling using interrupts                   |
+| `13_PWM`                    | Multi-channel PWM outputs                       |
+| `14_Empty`                  | Reserved for future examples                    |
 | `Chip_header`               | Common register definitions for STM32F446       |
 
 ---
 
-## 🔧 Microcontroller Info
+## ⚙️ Toolchain & Debugging
 
-- **Target MCU:** STM32F446RE
-- **Architecture:** ARM Cortex-M4
-- **Toolchain:** ARM GCC / STM32CubeIDE / Makefile compatible
-- **Debugging Interface:** SWD (OpenOCD / ST-Link)
-
----
-
-## 📚 Learning Goals
-
-✅ Write low-level peripheral drivers without HAL  
-✅ Understand STM32 register maps and bit manipulation  
-✅ Gain hands-on experience with UART, SPI, I2C, ADC, Timers, PWM, and GPIO  
-✅ Build embedded systems confidence for interviews and real projects
+- **MCU:** STM32F446RE (Cortex-M4, 180 MHz)
+- **Toolchain Options:**
+  - STM32CubeIDE  
+  - ARM GCC / Makefiles  
+  - VS Code + Cortex-Debug + OpenOCD  
+- **Debug Interface:** SWD (ST-LINK or OpenOCD)
 
 ---
 
-## 🔨 How to Build & Flash
+## 🔨 Build & Flash
 
-You can use:
-- **STM32CubeIDE**
-- **Makefile + arm-none-eabi-gcc**
-- **OpenOCD / ST-Link Utility** for flashing
+1. **STM32CubeIDE**:  
+   - Import each folder as a project  
+   - Ensure the correct startup file and linker script  
+2. **Makefile + GCC**:  
+   - Use `arm-none-eabi-gcc`  
+   - Flash with `st-flash` or `OpenOCD`
 
-Make sure to configure:
-- Target: STM32F446RE
-- Startup file and linker script (if using Makefiles)
+(*Let me know if you'd like sample Makefiles inserted*)
 
 ---
 
-## ✍️ Author
+## 📚 Learning Objectives
+
+- Register-level access without abstraction  
+- Practical use of UART, I2C, SPI, ADC, Timers, and PWM  
+- Techniques for both polling and interrupt-based I/O  
+- Essential knowledge for embedded interviews and product development
+
+---
+
+## 🔧 Next Steps
+
+- Add individual `README.md` files per folder  
+- Create Makefiles for each example  
+- Include `.gitignore` and `LICENSE` (MIT recommended)  
+- Expand to other STM32 MCUs (e.g., F103, F767)
+
+---
+
+## 👤 Author
 
 **Mayur Patil**  
-Assistant Embedded Engineer @ Discrete Circuit Pvt Ltd  
-GitHub: [@MAYURDIGAMBARPATIL](https://github.com/MAYURDIGAMBARPATIL)
-
----
-
-## 🧠 Future Plans
-
-- Add Makefiles for each folder  
-- Add README for each individual project  
-- Create board schematics and simulation support (Proteus / KiCAD)  
-- Port examples to STM32F103 & STM32F767
+— Embedded Engineer | Hardware Enthusiast  
+GitHub: [MAYURDIGAMBARPATIL](https://github.com/MAYURDIGAMBARPATIL)
 
 ---
 
 ## 📄 License
 
-This project is open-source and available under the MIT License. Feel free to use and modify for learning or commercial projects.
-
+Distributed under the **MIT License** – see `LICENSE` for details.
