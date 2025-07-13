@@ -1,0 +1,13 @@
+LaunchTargetManager/org.eclipse.launchbar.core.launchTargetType.local,Local/arch=x86_64
+LaunchTargetManager/org.eclipse.launchbar.core.launchTargetType.local,Local/name=Local
+LaunchTargetManager/org.eclipse.launchbar.core.launchTargetType.local,Local/os=win32
+configDescList=org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:01_gpio,org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:02_gpio_input,org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:03_uart_tx_rx,org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:04_uart_tx_rx_interrupt,org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:05_ADC_Contineous_Conversion,org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:10_Timer_gen,org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:11_Timer_interrupt_1s,org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:12,org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:13
+eclipse.preferences.version=1
+org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:01_gpio/activeLaunchMode=run
+org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:01_gpio/activeLaunchTarget=null\:---
+org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:03_uart_tx_rx/activeLaunchMode=debug
+org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:04_uart_tx_rx_interrupt/activeLaunchMode=debug
+org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:05_ADC_Contineous_Conversion/activeLaunchMode=debug
+org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:10_Timer_gen/activeLaunchMode=run
+org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:11_Timer_interrupt_1s/activeLaunchMode=debug
+org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:13/activeLaunchMode=run

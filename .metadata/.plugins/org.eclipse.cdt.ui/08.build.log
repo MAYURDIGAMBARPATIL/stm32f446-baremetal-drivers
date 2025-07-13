@@ -1,0 +1,26 @@
+15:27:24 **** Incremental Build of configuration Debug for project 08 ****
+make -j12 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F4 -DSTM32F446RETx -DNUCLEO_F446RE -c -I../Inc -I"C:/Users/mayur/Documents/STM32F446RE_Bare_metal/Driver/core" -I"C:/Users/mayur/Documents/STM32F446RE_Bare_metal/Driver/device" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/main.o"
+../Src/main.c: In function 'main':
+../Src/main.c:24:23: warning: passing argument 1 of 'SPI1_Transmit' makes pointer from integer without a cast [-Wint-conversion]
+   24 |         SPI1_Transmit(12,1);
+      |                       ^~
+      |                       |
+      |                       int
+../Src/main.c:10:29: note: expected 'uint8_t *' {aka 'unsigned char *'} but argument is of type 'int'
+   10 | void SPI1_Transmit(uint8_t *data, uint16_t size);
+      |                    ~~~~~~~~~^~~~
+arm-none-eabi-gcc -o "08.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\mayur\Documents\STM32F446RE_Bare_metal\08\STM32F446RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="08.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: 08.elf
+ 
+arm-none-eabi-size  08.elf 
+arm-none-eabi-objdump -h -S 08.elf  > "08.list"
+   text	   data	    bss	    dec	    hex	filename
+   1372	      0	   1568	   2940	    b7c	08.elf
+Finished building: default.size.stdout
+ 
+Finished building: 08.list
+ 
+
+15:27:24 Build Finished. 0 errors, 1 warnings. (took 473ms)
+

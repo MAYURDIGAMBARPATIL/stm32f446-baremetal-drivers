@@ -1,0 +1,10 @@
+18:34:08 **** Build of configuration Debug for project 05_ADC_Contineous_Conversion ****
+make -j12 all 
+arm-none-eabi-size  05_ADC_Contineous_Conversion.elf 
+   text	   data	    bss	    dec	    hex	filename
+    916	      0	   1568	   2484	    9b4	05_ADC_Contineous_Conversion.elf
+Finished building: default.size.stdout
+ 
+
+18:34:08 Build Finished. 0 errors, 0 warnings. (took 142ms)
+

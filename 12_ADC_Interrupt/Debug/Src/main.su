@@ -1,0 +1,7 @@
+C:/Users/mayur/Documents/STM32F446RE_Bare_metal/Driver/core/core_cm4.h:1684:22:__NVIC_EnableIRQ	16	static,ignoring_inline_asm
+../Src/main.c:22:13:adc_callback	8	static
+../Src/main.c:28:6:ADC_IRQHandler	8	static
+../Src/main.c:40:5:main	8	static
+../Src/main.c:50:6:pa1_adc_interrupt_init	8	static
+../Src/main.c:84:6:start_converstion	4	static
+../Src/main.c:92:10:adc_read	4	static

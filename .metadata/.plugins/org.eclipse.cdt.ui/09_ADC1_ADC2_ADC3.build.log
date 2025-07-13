@@ -1,0 +1,20 @@
+15:28:41 **** Build of configuration Debug for project 09_ADC1_ADC2_ADC3 ****
+make -j12 all 
+arm-none-eabi-gcc -mcpu=cortex-m4 -g3 -DDEBUG -c -x assembler-with-cpp -MMD -MP -MF"Startup/startup_stm32f446retx.d" -MT"Startup/startup_stm32f446retx.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Startup/startup_stm32f446retx.o" "../Startup/startup_stm32f446retx.s"
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F4 -DSTM32F446RETx -DNUCLEO_F446RE -c -I../Inc -I"C:/Users/mayur/Documents/STM32F446RE_Bare_metal/Driver/core" -I"C:/Users/mayur/Documents/STM32F446RE_Bare_metal/Driver/device" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/main.o"
+arm-none-eabi-gcc "../Src/syscalls.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F4 -DSTM32F446RETx -DNUCLEO_F446RE -c -I../Inc -I"C:/Users/mayur/Documents/STM32F446RE_Bare_metal/Driver/core" -I"C:/Users/mayur/Documents/STM32F446RE_Bare_metal/Driver/device" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/syscalls.d" -MT"Src/syscalls.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/syscalls.o"
+arm-none-eabi-gcc "../Src/sysmem.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F4 -DSTM32F446RETx -DNUCLEO_F446RE -c -I../Inc -I"C:/Users/mayur/Documents/STM32F446RE_Bare_metal/Driver/core" -I"C:/Users/mayur/Documents/STM32F446RE_Bare_metal/Driver/device" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/sysmem.d" -MT"Src/sysmem.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/sysmem.o"
+arm-none-eabi-gcc -o "09_ADC1_ADC2_ADC3.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\mayur\Documents\STM32F446RE_Bare_metal\09_ADC1_ADC2_ADC3\STM32F446RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="09_ADC1_ADC2_ADC3.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: 09_ADC1_ADC2_ADC3.elf
+ 
+arm-none-eabi-size  09_ADC1_ADC2_ADC3.elf 
+arm-none-eabi-objdump -h -S 09_ADC1_ADC2_ADC3.elf  > "09_ADC1_ADC2_ADC3.list"
+   text	   data	    bss	    dec	    hex	filename
+   3592	      0	   1600	   5192	   1448	09_ADC1_ADC2_ADC3.elf
+Finished building: default.size.stdout
+ 
+Finished building: 09_ADC1_ADC2_ADC3.list
+ 
+
+15:28:42 Build Finished. 0 errors, 0 warnings. (took 545ms)
+

@@ -1,0 +1,30 @@
+
+//TIMER 2 CHANNEL 1////////////////
+#include "stm32f446xx.h"
+void delayMS(int delay);//DEFINE DELAY FUNCTION
+int main (void){
+	//RCC->APB1ENR |= (1<<17);//USART CLOCK ENBLE
+	RCC->AHB1ENR |= (1<<0); //POARTA CLOCK ENBLE
+	RCC->APB1ENR |=(1<<0); //enble timer clock
+	GPIOA->AFR[0] |=(1<<20); //AF1 LOW //(0x1UL << GPIO_AFRL_AFSEL5_Pos);
+	GPIOA->MODER |= (2<<10);
+	TIM2->PSC = 16 - 1;   // Assuming 16MHz HSI clock and desired PWM frequency of 10kHz
+	TIM2->ARR = 100-1;   // Period = (ARR + 1) * (PSC + 1) / Timer_Clock = 10ms
+	TIM2->CCR1 = 90;       // 50% duty cycle (CCR1 / ARR)
+	TIM2->CCMR1 |=(6<<4);//PWM MODE 1 CHANNEL 1  //(TIM_CCMR1_OC1M_1 | TIM_CCMR1_OC1M_2);
+	TIM2->CCER |=(1<<4);//channel 1
+	TIM2->CR1 |= (1<<0); //Counter enabled
+
+	while(1){
+		//pwm at pa5
+	}
+}
+
+
+void delayMS(int delay)
+{
+	int i;
+	for( ;delay>0; delay--)
+	   for(i= 0; i<=3195; i++);
+
+}

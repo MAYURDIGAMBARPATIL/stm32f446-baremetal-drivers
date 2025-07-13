@@ -1,0 +1,38 @@
+15:29:58 **** Build of configuration Debug for project 10 ****
+make -j12 all 
+arm-none-eabi-gcc -mcpu=cortex-m4 -g3 -DDEBUG -c -x assembler-with-cpp -MMD -MP -MF"Startup/startup_stm32f446retx.d" -MT"Startup/startup_stm32f446retx.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Startup/startup_stm32f446retx.o" "../Startup/startup_stm32f446retx.s"
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F4 -DSTM32F446RETx -DNUCLEO_F446RE -c -I../Inc -I"C:/Users/mayur/Documents/STM32F446RE_Bare_metal/Driver/core" -I"C:/Users/mayur/Documents/STM32F446RE_Bare_metal/Driver/device" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/main.o"
+arm-none-eabi-gcc "../Src/syscalls.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F4 -DSTM32F446RETx -DNUCLEO_F446RE -c -I../Inc -I"C:/Users/mayur/Documents/STM32F446RE_Bare_metal/Driver/core" -I"C:/Users/mayur/Documents/STM32F446RE_Bare_metal/Driver/device" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/syscalls.d" -MT"Src/syscalls.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/syscalls.o"
+arm-none-eabi-gcc "../Src/sysmem.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F4 -DSTM32F446RETx -DNUCLEO_F446RE -c -I../Inc -I"C:/Users/mayur/Documents/STM32F446RE_Bare_metal/Driver/core" -I"C:/Users/mayur/Documents/STM32F446RE_Bare_metal/Driver/device" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/sysmem.d" -MT"Src/sysmem.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/sysmem.o"
+../Src/main.c: In function 'main':
+../Src/main.c:26:25: error: 'GPIOAEN' undeclared (first use in this function); did you mean 'GPIOA'?
+   26 |         RCC->AHB1ENR |= GPIOAEN;
+      |                         ^~~~~~~
+      |                         GPIOA
+../Src/main.c:26:25: note: each undeclared identifier is reported only once for each function it appears in
+../Src/main.c:30:9: warning: implicit declaration of function 'uart2_rxtx_init' [-Wimplicit-function-declaration]
+   30 |         uart2_rxtx_init();
+      |         ^~~~~~~~~~~~~~~
+../Src/main.c:36:44: error: 'SR_UIF' undeclared (first use in this function)
+   36 |                         while(!(TIM2->SR & SR_UIF)){}
+      |                                            ^~~~~~
+../Src/main.c:42:17: warning: implicit declaration of function 'printf' [-Wimplicit-function-declaration]
+   42 |                 printf("A second passed !! \n\r");
+      |                 ^~~~~~
+../Src/main.c:2:1: note: include '<stdio.h>' or provide a declaration of 'printf'
+    1 | #include "stm32f446xx.h"
+  +++ |+#include <stdio.h>
+    2 | 
+../Src/main.c:42:17: warning: incompatible implicit declaration of built-in function 'printf' [-Wbuiltin-declaration-mismatch]
+   42 |                 printf("A second passed !! \n\r");
+      |                 ^~~~~~
+../Src/main.c:42:17: note: include '<stdio.h>' or provide a declaration of 'printf'
+../Src/main.c:43:30: error: 'LED_PIN' undeclared (first use in this function)
+   43 |                 GPIOA->ODR ^=LED_PIN;
+      |                              ^~~~~~~
+make: *** [Src/subdir.mk:25: Src/main.o] Error 1
+make: *** Waiting for unfinished jobs....
+"make -j12 all" terminated with exit code 2. Build might be incomplete.
+
+15:29:59 Build Failed. 5 errors, 3 warnings. (took 291ms)
+

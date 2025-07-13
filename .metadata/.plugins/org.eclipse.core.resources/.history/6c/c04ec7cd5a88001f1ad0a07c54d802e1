@@ -1,0 +1,10 @@
+#include "stm32f446xx.h" //standard file for nucleo stm32f446re board
+
+#define GPIOAEN		(1<<0)
+
+int main()
+{
+	RCC->AHB1ENR |= GPIOAEN;
+	GPIOA->MODER |= (2<<10);
+
+}
